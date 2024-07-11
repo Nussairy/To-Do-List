@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <h1 class="text-center">Add a New Task</h1>
+    <input #taskTitle type="text" placeholder="Enter Task Title" class="form-control mb-3">
+    <textarea #taskDescription name="description" id="description" placeholder="Enter Task Description" class="form-control mb-3"></textarea>
+    <button class="btn btn-success" (click)="saveTask(taskTitle.value, taskDescription.value)">Save</button>
+    <button class="btn btn-secondary ms-1" routerLink="/">Cancel</button>
+</div>

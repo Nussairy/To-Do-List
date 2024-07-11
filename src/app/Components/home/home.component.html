@@ -1,0 +1,19 @@
+<div class="container-fluid w-75">
+
+    <div class="w-100">
+        <h1 class="text-center">To-Do List</h1>
+        <div class="alert alert-danger" *ngIf="tasks.length == 0">No Tasks Yet</div>
+        <div *ngIf="tasks.length > 0">
+            <ul class="list-unstyled list-group">
+                <li *ngFor="let task of tasks; index as i" class="list-group-item border-1 d-flex justify-content-between">
+                    <a [routerLink]="['/task', i]" class="text-decoration-none text-black">
+                        <h4>{{task.Title}}</h4>
+                    </a>
+                    <button class="btn btn-danger" (click)="deleteTask(i)">Delete</button>
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-primary w-100 mt-2" routerLink="addTask">Add Task</button>
+    </div>
+
+</div>
